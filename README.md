@@ -1,47 +1,166 @@
-# 🌟 Random Quote Generator — CodeAlpha Task 2
+# 🌟 QuoteSpark — Random Quote Generator
 
-The Random Quote Generator is a modern, lightweight Flutter application designed to deliver daily inspiration through thought-provoking quotes. Developed as part of the CodeAlpha Mobile Development Internship, the primary goal of this application is to combine minimal design with fluid responsiveness, ensuring that users can effortlessly access, read, and share impactful quotes without visual distraction.
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
+[![Provider](https://img.shields.io/badge/State_Management-Provider-blueviolet?style=for-the-badge)](https://pub.dev/packages/provider)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web-brightgreen?style=for-the-badge)]()
+[![CodeAlpha](https://img.shields.io/badge/CodeAlpha-Task%202-orange?style=for-the-badge)](https://github.com/hailedv/CodeAlpha_ProjectNametask2)
 
----
-
-## 📌 Project Overview & Task Compliance
-
-This project directly fulfills all core requirements set by the CodeAlpha internship curriculum. Upon launching the application, users are immediately greeted with a carefully selected quote, ensuring an engaging experience right from the start. A prominent "New Quote" button allows users to cycle through a vast repository of wisdom on demand. Every quote clearly highlights both the quote text and its respective author, using a structured typographic hierarchy that guarantees maximum legibility. The interface adopts a clean, distraction-free aesthetic with subtle elevations, balanced margins, and modern rounded contours to deliver a polished and seamless user journey.
-
----
-
-## 🚀 Key Features
-
-### 🎲 Instant and Intelligent Quote Randomization
-The application incorporates a smart randomization engine that selects quotes across diverse themes. The randomizer features intelligent anti-repetition logic, ensuring that consecutive clicks always produce fresh inspiration rather than repeating the same quote. To enhance visual delight, every quote change is accompanied by a smooth fade-and-slide micro-animation, avoiding abrupt screen flashes and creating a calm reading ambiance.
-
-### 🏷️ Intuitive Category Filtering
-To accommodate different moods and interests, quotes are organized into curated categories such as Motivation, Wisdom, Success, Life, and Mindfulness. Users can smoothly scroll through horizontal filter pills at the top of the screen. Selecting any category instantly narrows down the randomizer pool to quotes matching that exact theme, making it easy to find targeted inspiration in seconds.
-
-### ❤️ Dedicated Favorites & Persistence
-Users can easily bookmark quotes that resonate with them by tapping the interactive heart icon on the main card. The application tracks all saved quotes in a dedicated Favorites Screen, accessible via the top navigation bar with a live badge counter. Within the favorites screen, users can review their collected insights or remove quotes using a natural swipe-to-dismiss gesture.
-
-### 📋 Seamless Copying & Social Sharing
-Spreading inspiration is quick and intuitive. With a single tap on the copy button, the quote is formatted cleanly with author attribution and saved to the device clipboard, accompanied by an instant confirmation toast. Additionally, native sharing integration allows users to share quotes directly to messaging apps and social media platforms including WhatsApp, Telegram, Twitter/X, and SMS.
-
-### 🌗 Adaptive Light & Dark Themes
-The user interface supports both high-contrast light mode and an eye-friendly dark mode. The light theme utilizes soft off-white tones and slate typography for effortless daytime reading, while the dark theme uses deep OLED-friendly slate backgrounds to reduce eye strain in low-light environments. Users can toggle seamlessly between themes at any moment with the top navigation switch.
+A clean, modern, and responsive Flutter application that delivers daily inspiration through curated quotes. Built as **Task 2** for the **CodeAlpha Mobile Development Internship**, featuring smooth micro-animations, category filtering, favorites persistence, and native sharing.
 
 ---
 
-## 🛠️ Architecture & Technical Stack
+## 📑 Table of Contents
 
-The project is built on the Flutter framework using the Dart programming language, following clean architecture principles. State management is efficiently handled using the Provider package (ChangeNotifier), ensuring a responsive user interface with minimal rebuild overhead. The data layer cleanly separates the local quote dataset, models, and business logic, making the codebase maintainable, scalable, and cross-platform ready for Android, iOS, Web, Windows, and macOS.
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [App Preview & Screens](#-app-preview--screens)
+- [Task 2 Requirements Checklist](#-task-2-requirements-checklist)
+- [Tech Stack & Packages](#-tech-stack--packages)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+- [Author & Acknowledgments](#-author--acknowledgments)
+
+---
+
+## 📖 Overview
+
+**QuoteSpark** combines an elegant, distraction-free aesthetic with fluid animations. Users can instantly discover wisdom across various themes, bookmark their favorite quotes for offline reading, copy them to the clipboard, or share them directly with friends and social networks.
+
+---
+
+## ✨ Key Features
+
+- 🎲 **Smart Randomization**
+  - Instant quote generator with anti-repetition logic (never shows the same quote consecutively).
+  - Smooth fade-and-slide micro-animations between quote transitions.
+  - Real-time quote counter tracking session progress.
+
+- 🏷️ **Categorized Inspiration**
+  - 8 curated categories: **Motivation** 🔥, **Wisdom** 🦉, **Life** 🌿, **Love** ❤️, **Humor** 😄, **Success** 🏆, **Courage** ⚡, and **Mindfulness** 🧘.
+  - Horizontal filter row allowing instant filtering or full-collection browsing.
+
+- ❤️ **Favorites & Local Persistence**
+  - Save quotes with a single tap on the interactive heart icon.
+  - Stored persistently on device using `shared_preferences`.
+  - Dedicated **Favorites Screen** with real-time badge count and quick-access view.
+
+- 📋 **Copy to Clipboard**
+  - One-tap copy with formatted quote text and author attribution.
+  - Interactive toast/snackbar confirmation.
+
+- 📤 **Native Social Sharing**
+  - Share quotes seamlessly to WhatsApp, Telegram, X (Twitter), SMS, or other apps via `share_plus`.
+
+- 🎨 **Modern Dark UI Design**
+  - Deep slate tones with warm gradient highlights (`#E94560` to `#F5A623`).
+  - Clean typographic hierarchy powered by Google Fonts (`Inter`).
+  - Polished launch splash screen with smooth entry transitions.
+
+---
+
+## 📱 App Preview & Screens
+
+| Home Screen | Category Filter | Favorites Screen |
+| :---: | :---: | :---: |
+| <img src="https://via.placeholder.com/300x600/16213E/FFFFFF?text=Home+Screen" width="220" alt="Home Screen"/> | <img src="https://via.placeholder.com/300x600/16213E/FFFFFF?text=Category+Filter" width="220" alt="Category Filter"/> | <img src="https://via.placeholder.com/300x600/16213E/FFFFFF?text=Favorites" width="220" alt="Favorites Screen"/> |
+
+---
+
+## ✅ Task 2 Requirements Checklist
+
+| Requirement | Description | Status |
+| :--- | :--- | :---: |
+| **Initial Quote Display** | Shows a curated quote and author upon opening the application | ✅ Done |
+| **New Quote Trigger** | Dedicated button to generate fresh quotes dynamically | ✅ Done |
+| **Clear Typography** | Legible author and quote text layout with structured styling | ✅ Done |
+| **Distraction-Free UI** | Clean card layout, subtle elevation, and rounded modern design | ✅ Done |
+| **Share Functionality** | Ability to share quotes directly across external platforms | ✅ Done |
+| **Extra Enhancements** | Category filtering, persistent favorites, animations & copy action | ✅ Done |
+
+---
+
+## 🛠️ Tech Stack & Packages
+
+- **Language:** Dart `^3.11.0`
+- **Framework:** Flutter SDK
+- **State Management:** [`provider`](https://pub.dev/packages/provider) (`^6.1.2`)
+- **Local Storage:** [`shared_preferences`](https://pub.dev/packages/shared_preferences) (`^2.3.2`)
+- **Native Sharing:** [`share_plus`](https://pub.dev/packages/share_plus) (`^10.0.2`)
+- **Typography:** [`google_fonts`](https://pub.dev/packages/google_fonts) (`^6.2.1`)
+- **Icons:** [`cupertino_icons`](https://pub.dev/packages/cupertino_icons) (`^1.0.8`)
+
+---
+
+## 📂 Project Structure
+
+```text
+lib/
+├── data/
+│   └── quotes_data.dart          # Curated database of quotes across 8 categories
+├── models/
+│   └── quote.dart                # Quote model & QuoteCategory enum with emoji extensions
+├── providers/
+│   └── quote_provider.dart       # State management (randomizer, favorites, filter)
+├── screens/
+│   ├── favorites_screen.dart     # Bookmarked quotes list & management
+│   └── home_screen.dart          # Main interface with quote card & navigation
+├── theme/
+│   └── app_theme.dart            # Colors, gradients, dark theme definitions
+├── widgets/
+│   ├── category_filter_row.dart  # Horizontal category selection bar
+│   └── quote_card.dart           # Animated card with copy, share & favorite actions
+└── main.dart                     # App entry point, orientations, and splash screen
+```
 
 ---
 
 ## 🚀 Getting Started
 
-To run this application locally, clone the repository to your machine using `git clone https://github.com/hailedv/CodeAlpha_ProjectNametask2.git`. Navigate into the project directory and run `flutter pub get` to install all necessary packages. Finally, launch the app on your preferred emulator, physical device, or browser with `flutter run`.
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (version `>=3.11.0`)
+- [Dart SDK](https://dart.dev/get-started)
+- Android Studio, VS Code, or Xcode (for iOS)
+- An active emulator, simulator, or connected physical device
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hailedv/CodeAlpha_ProjectNametask2.git
+   ```
+
+2. **Navigate to the project directory:**
+   ```bash
+   cd CodeAlpha_ProjectNametask2
+   ```
+
+3. **Install project dependencies:**
+   ```bash
+   flutter pub get
+   ```
+
+4. **Run the application:**
+   ```bash
+   flutter run
+   ```
 
 ---
 
 ## 👨‍💻 Author
+
 **Haile Geberemichael**  
-*Flutter Development Intern at CodeAlpha*  
-🔗 GitHub: [https://github.com/hailedv/CodeAlpha_ProjectNametask2](https://github.com/hailedv/CodeAlpha_ProjectNametask2)
+*Flutter Mobile App Development Intern — CodeAlpha*
+
+- **GitHub:** [@hailedv](https://github.com/hailedv)
+- **Repository:** [CodeAlpha_ProjectNametask2](https://github.com/hailedv/CodeAlpha_ProjectNametask2)
+
+---
+
+## 📄 License
+
+This project is open-source and developed for educational purposes as part of the CodeAlpha Internship.
